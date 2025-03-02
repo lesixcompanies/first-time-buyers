@@ -77,16 +77,16 @@ module.exports = async function handler(req, res) {
     console.log(`Final quality score: ${qualityScore}`);
 
     // Determine the redirect URL based on the score
-    let redirectUrl = "https://wefindthebest.homes/next-steps"; // Default for low quality (≤ 9)
+    let redirectUrl = "https://wefindthebest.homes/next-steps"; // Default for low quality (≤ 10)
     
     if (qualityScore >= 21) { // High quality lead (21-30)
       redirectUrl = "https://wefindthebest.homes/schedule";
       console.log(`Score ${qualityScore} >= 21, redirecting to schedule page`);
-    } else if (qualityScore >= 10) { // Lender lead (10-20)
+    } else if (qualityScore >= 11) { // Lender lead (11-20)
       redirectUrl = "https://wefindthebest.homes/lender";
-      console.log(`Score ${qualityScore} >= 10, redirecting to lender page`);
+      console.log(`Score ${qualityScore} >= 11, redirecting to lender page`);
     } else {
-      console.log(`Score ${qualityScore} < 10, redirecting to next-steps page`);
+      console.log(`Score ${qualityScore} <= 10, redirecting to next-steps page`);
     }
 
     console.log(`Final redirect URL: ${redirectUrl}`);
