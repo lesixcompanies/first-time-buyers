@@ -48,8 +48,8 @@ module.exports = async function handler(req, res) {
     const cfArray = contact.customField || [];
     
     // Search through custom fields to find the quality score
-    // Using the field ID directly (replace 'YOUR_FIELD_ID_HERE' with the actual ID)
-    const qualityScoreFieldId = 'YOUR_FIELD_ID_HERE'; // Update this with the actual field ID
+    // Using the field ID directly
+    const qualityScoreFieldId = '0NBOPMGYmmBJDGqAACk6'; // Quality score field ID
     
     let qualityScore = null;
     const scoreField = cfArray.find(field => field.id === qualityScoreFieldId);
